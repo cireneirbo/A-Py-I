@@ -2,7 +2,7 @@ import requests
 
 def get_requests():
   #the api endpoint
-  url = 'https://jsonplaceholder.typicode.com/posts'
+  url = 'https://api.adviceslip.com/advice'
 
   try:
     #attempt the api request
@@ -24,8 +24,8 @@ def main():
   posts = get_requests()
   #if it responds with data
   if posts:
-    print('First Post Title:', posts[0]['title'])
-    print('First Post Body', posts[0]['body'])
+    print('Id:', posts['slip']['id'])
+    print('Advice:', posts['slip']['advice'])
   #if no data returns
   else:
     print('Failed to return the API data...')
